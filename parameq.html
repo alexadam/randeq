@@ -1,0 +1,82 @@
+<html>
+
+<head>
+
+	<style type="text/css">
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	
+	canvas {
+		/* position: absolute; */
+		left: 0;
+		top: 0;
+		/* z-index: -1; */
+		width: 100%;
+		height: 70%; //100%;
+	}
+	
+	#input-zone {
+		width: 100%;
+		height: 30%;
+		background-color: "#f3f3f3";
+	}
+	
+	</style>
+	
+	<!-- <link rel="stylesheet" type="text/css" href="style.css">-->
+	 <script type="text/javascript" src="randeq.js"></script>
+	<script type="text/javascript" src="parameq.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+	
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			createImageData("canvas");
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<div id="input-zone">
+		<h3>Param Eq</h3>
+		<form>
+			<table>
+				<tr>
+					<td>X: </td>
+					<td><input id="xeq" type="text" name="xeq" size="100" value=""></td>
+					<td><button type="button" onclick='$("#xeq").val(genRandEqT(50));'>RndEq</button></td>
+				</tr>
+				<tr>
+					<td>Y: </td>
+					<td><input id="yeq" type="text" name="yeq" size="100" value=""></td>
+					<td><button type="button" onclick='$("#yeq").val(genRandEqT(50));'>RndEq</button></td>
+				</tr>
+				<tr>
+					<td>T min: </td>
+					<td><input id="tmin" type="text" name="ptmin" size="5" value="-6.28"></td>
+				</tr>
+				<tr>
+					<td>T max: </td>
+					<td><input id="tmax" type="text" name="ptmax" size="5" value="6.28"></td>
+				</tr>
+				<tr>
+					<td>Step: </td>
+					<td><input id="step" type="text" name="pstep" size="5" value="0.001"></td>
+				</tr>
+				<tr>
+					<td><button type="button" onclick='drawParamEq($("#xeq").val(), $("#yeq").val(), $("#tmin").val(), $("#tmax").val(), $("#step").val());'>Plot</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<canvas id="canvas">
+		 Your browser does not support the canvas element.
+	</canvas>
+
+</body>
+
+</html>
