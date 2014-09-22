@@ -1,4 +1,5 @@
 equ
 ===
 
-plot misc equations, cellurar  automata, fractals etc.
+plot misc equations, cellular  automata, fractals etc.
+
